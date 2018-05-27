@@ -1,5 +1,8 @@
 -- CONFIG --
 
+RegisterFontFile('comic')
+fontId = RegisterFontId('Comic Sans MS')
+
 -- The watermark text --
 servername = "FiveM.Fun Project"
 
@@ -23,7 +26,7 @@ scale = 1.0
 -- Text Font --
 -- 0 - 5 possible
 -- Default: 1
-font = 1
+font = fontId
 
 -- Rainbow Text --
 -- false: Turn off
