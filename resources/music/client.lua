@@ -1297,13 +1297,14 @@ local music = {
  "VAL2_PRE_COUNTDOWN_STOP"
 }
 
-RegisterCommand("music", function(source, args)
-	running = music[GetRandomIntInRange(1, #music)]
-	TriggerMusicEvent(running)
-end)
-
-RegisterCommand("stopmusic", function(source, args)
-	if running then
-		CancelMusicEvent(running)
-	end
+AddEventHandler("menu:setup", function()
+	TriggerEvent("menu:addModuleItem", nil, "Play music", nil, false, function()
+		running = music[GetRandomIntInRange(1, #music)]
+		TriggerMusicEvent(running)
+	end)
+	TriggerEvent("menu:addModuleItem", nil, "Stop music", nil, false, function()
+		if running then
+			CancelMusicEvent(running)
+		end
+	end)
 end)
