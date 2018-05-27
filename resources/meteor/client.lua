@@ -3,7 +3,7 @@ local function _SetEntityAsNoLongerNeeded(entity)
 end
 
 AddEventHandler("menu:setup", function()
-	TriggerEvent("menu:addModuleItem", false, "Spawn meteors", nil, false, function()
+	TriggerEvent("menu:addModuleItem", false, "Spawn meteors", false, false, function()
 		Citizen.CreateThread(function()
 			for i=1,50 do
 				Wait(1)

@@ -1298,11 +1298,11 @@ local music = {
 }
 
 AddEventHandler("menu:setup", function()
-	TriggerEvent("menu:addModuleItem", false, "Play music", nil, false, function()
+	TriggerEvent("menu:addModuleItem", false, "Play music", false, false, function()
 		running = music[GetRandomIntInRange(1, #music)]
 		TriggerMusicEvent(running)
 	end)
-	TriggerEvent("menu:addModuleItem", false, "Stop music", nil, false, function()
+	TriggerEvent("menu:addModuleItem", false, "Stop music", false, false, function()
 		if running then
 			CancelMusicEvent(running)
 		end
