@@ -4,7 +4,7 @@ end
 RegisterCommand("meteor", function()
 
 	Citizen.CreateThread(function()
-		for 1,50 do
+		for i=1,50 do
 			Wait(1)
 	
 			local playerPed = GetPlayerPed(-1)
