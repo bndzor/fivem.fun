@@ -1,0 +1,6 @@
+D:\Projects\FiveM\scripts\Fullrp\Fullrp\obj\Debug\Fullrp.csprojResolveAssemblyReference.cache
+D:\Projects\FiveM\scripts\Fullrp\Fullrp\obj\Debug\Fullrp.csproj.CoreCompileInputs.cache
+D:\Projects\FiveM\scripts\Fullrp\Fullrp\obj\Debug\Fullrp.net.dll
+D:\Projects\FiveM\scripts\Fullrp\Fullrp\obj\Debug\Fullrp.net.pdb
+D:\Projects\FiveM\scripts\Fullrp\Fullrp.net.dll
+D:\Projects\FiveM\scripts\Fullrp\Fullrp.net.pdb
