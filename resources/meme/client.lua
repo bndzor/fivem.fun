@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
     while true do
-        Wait(25) -- any faster and you'll be hit with resource warnings, but damn it'll be awesome hell
+        Wait(25) -- any faster and you'll be hit with resource warnings, but damn it'll be awesome as hell
         local h = GetClockHours()
         local m = GetClockMinutes()
         if m > 59 then
