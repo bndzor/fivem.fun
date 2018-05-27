@@ -17,5 +17,10 @@ if IsControlJustPressed(1, 289) then
     end
     SetEntityCoords(PlayerPedId(),blipX,blipY,GetGroundZFor_3dCoord(blipX, blipY, 400.0),1,0,0,1)
 end
+if GetEntityCoords(PlayerPedId()).z < 0 or IsEntityInAir(PlayerPedId()) and not IsPedInAnyVehicle(PlayerPedId(), false) then
+SetEntityInvincible(PlayerPedId(), true)
+else
+    SetEntityInvincible(PlayerPedId(), false)
+end
 end
 end)
