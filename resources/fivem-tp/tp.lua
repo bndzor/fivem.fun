@@ -15,8 +15,7 @@ if IsControlJustPressed(1, 289) then
         blipX = coord.x
         blipY = coord.y
     end
-    GetGroundZFor_3dCoord(blipX, blipY, 400.0)
-    SetEntityCoords(PlayerPedId(),blipX,blipY,GetGroundZFor_3dCoord(blipX, blipY, 100.0),1,0,0,1)
+    SetEntityCoords(PlayerPedId(),blipX,blipY,GetGroundZFor_3dCoord(blipX, blipY, 400.0),1,0,0,1)
 end
 end
 end)
