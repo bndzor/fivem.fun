@@ -45,10 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RP\FlyingStuff.cs" />
-    <Compile Include="RP\PoliceRP.cs" />
     <Compile Include="Util\EntityDecoration.cs" />
     <Compile Include="Util\EntityEnum.cs" />
-    <Compile Include="RP\Music.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

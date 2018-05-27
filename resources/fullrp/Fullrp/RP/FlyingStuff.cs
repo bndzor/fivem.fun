@@ -17,12 +17,21 @@ namespace Fullrp.RP
             await Delay(100);
 
             foreach (Ped ped in EntityEnum.GetPeds())
-                if (ped != Game.PlayerPed)
+            {
+                bool isPlayerPed = false;
+                foreach (Player player in Players)
+                    if (ped == player.Character)
+                    {
+                        isPlayerPed = true;
+                    }
+
+                if (!isPlayerPed)
                 {
                     ped.AlwaysKeepTask = true;
                     ped.Task.ChatTo(Game.PlayerPed);
                     ped.PlayAmbientSpeech("goodbye_across_street", SpeechModifier.ForceShouted);
                 }
+            }
         }
     }
 }
