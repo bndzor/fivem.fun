@@ -84,9 +84,11 @@ AddEventHandler("menu:addModuleItem", function(menu, name, onoff, cbdone, cbclic
 		else
 			local id = uuid()
 			
-			local parentElement = getByID(menu)
-			local parents = table.shallow_copy(parentElement.parents)
-			table.insert(parents, menu)
+			if menu then
+				local parentElement = getByID(menu)
+				local parents = table.shallow_copy(parentElement.parents)
+				table.insert(parents, menu)
+			end
 			
 			local data = {parents = parents, id = id, name = name, onoff = onoff}
 			table.insert(moduleContent, data)

@@ -1,6 +1,5 @@
 resource_manifest_version "44febabe-d386-4d18-afbe-5e627f4af937"
-resource_version "2.3.4"
-resource_triggerrestart "1"
+resource_version "2.3.5"
 
 ui_page "nui/menu.html"
 

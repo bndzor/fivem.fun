@@ -3,7 +3,7 @@ Citizen.CreateThread(function()
 		Wait(100)
 
 		for vehicle in EnumerateVehicles() do
-			ApplyForceToEntity(vehicle, 2, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0, true, 0, true, 0, 0)
+			ApplyForceToEntity(vehicle, 1, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0, true, 0, true, 0, 0)
 		end
 	end
 end)
