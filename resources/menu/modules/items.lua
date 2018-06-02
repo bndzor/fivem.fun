@@ -156,8 +156,12 @@ AddEventHandler("menu:setGreyedOut", function(state, id)
 end)
 
 AddEventHandler("menu:isGreyedOut", function(id, cb)
-	if id and isIDRegistered(id) and cb then
-		cb(getByID(id).greyedout)
+	if cb then
+		if not id or not isIDRegistered(id) then
+			cb(nil)
+		else
+			cb(getByID(id).greyedout)
+		end
 	end
 end)
 
@@ -181,12 +185,16 @@ AddEventHandler("menu:setRightText", function(id, text)
 end)
 
 AddEventHandler("menu:getRightText", function(id, cb)
-	if id and isIDRegistered(id) and cb then
-		cb(getByID(id).righttext)
+	if cb then
+		if not id or not isIDRegistered(id) then
+			cb(nil)
+		else
+			cb(getByID(id).righttext)
+		end
 	end
 end)
 
-AddEventHandler("menu:removeByID", function(id)
+AddEventHandler("menu:removeByID", function(id, retainParent)
 	if id and isIDRegistered(id) then
 		local removables = {}
 		for _, element in ipairs(moduleContent) do
@@ -201,7 +209,7 @@ AddEventHandler("menu:removeByID", function(id)
 		end
 		
 		SendNUIMessage({
-			removeElements = {removables = removables}
+			removeElements = {removables = removables, retainParent = retainParent}
 		})
 		
 		for i, removable in ipairs(removables) do
@@ -227,8 +235,12 @@ AddEventHandler("menu:setOnOffState", function(id, state)
 end)
 
 AddEventHandler("menu:getOnOffState", function(id, cb)
-	if id and isIDRegistered(id) and cb then
-		cb(getByID(id).onoff)
+	if cb then
+		if not id or not isIDRegistered(id) then
+			cb(nil)
+		else
+			cb(getByID(id).onoff)
+		end
 	end
 end)
 

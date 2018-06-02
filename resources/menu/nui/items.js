@@ -18,7 +18,7 @@ $(function() {
 		else if (data.setRightText)
 			setModuleItemRightText(data.setRightText.id, data.setRightText.text);
 		else if (data.removeElements)
-			removeElementsByIDsProperly(data.removeElements.removables);
+			removeElementsByIDsProperly(data.removeElements.removables, data.removeElements.retainParent);
 		else if (data.setModuleItemDatastate)
 			setModuleItemDatastate(data.setModuleItemDatastate.id, data.setModuleItemDatastate.state);
     });
@@ -120,7 +120,7 @@ function setModuleItemRightText(id, text) {
 	}
 }
 
-function removeElementsByIDsProperly(ids) {
+function removeElementsByIDsProperly(ids, retainParent) {
 	var afterwardsMenu;
 	
 	if (content != null)
@@ -130,7 +130,7 @@ function removeElementsByIDsProperly(ids) {
 					afterwardsMenu = content.items[currentpage][i].parent;
 				
 	for (var i = 0; i < ids.length; i++)
-		removeElementByID(ids[i]);
+		removeElementByID(ids[i], retainParent);
 	
 	if (afterwardsMenu != null)
 		if (menus[afterwardsMenu] == null)
@@ -139,7 +139,7 @@ function removeElementsByIDsProperly(ids) {
 			showMenu(menus[afterwardsMenu]);
 }
 
-function removeElementByID(id) {
+function removeElementByID(id, retainParent) {
 	var parentElement = menus[items[id].parent];
 	if (parentElement != null)
 		for (var i = 0; i < parentElement.items.length; i++)
@@ -149,8 +149,8 @@ function removeElementByID(id) {
 					
 					if (j == 0) {
 						parentElement.items.splice(i, 1);
-						if (i == 0)
-							removeElementByID(parentElement.id);
+						if (!retainParent && i == 0)
+							removeElementByID(parentElement.id, false);
 					}
 				}
 		

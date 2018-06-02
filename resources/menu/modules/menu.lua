@@ -29,6 +29,7 @@ AddEventHandler("menu:hideMenu", function()
 		SendNUIMessage({
 			hidemenu = true
 		})
+		menuopen = false
 	end
 end)
 
